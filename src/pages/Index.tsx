@@ -75,18 +75,11 @@ const Index = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
-                  className="bw-accent h-12 px-8 text-lg font-medium"
+                  className="gradient-primary h-12 px-8 text-lg font-medium text-background hover:opacity-90"
                   onClick={() => navigate('/login/student')}
                 >
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-                <Button 
-                  variant="outline" 
-                  className="bw-outline h-12 px-8 text-lg font-medium"
-                  onClick={() => navigate('/login/teacher')}
-                >
-                  Become a Teacher
                 </Button>
               </div>
 
@@ -110,11 +103,11 @@ const Index = () => {
                   className="w-full h-auto rounded-2xl shadow-[var(--shadow-hover)]"
                 />
                 {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-white border-2 border-black rounded-full flex items-center justify-center shadow-[var(--shadow-card)] animate-bounce [animation-delay:1s]">
-                  <GraduationCap className="w-8 h-8" />
+                <div className="absolute -top-4 -right-4 w-16 h-16 gradient-primary rounded-full flex items-center justify-center shadow-[var(--shadow-card)] animate-bounce [animation-delay:1s]">
+                  <GraduationCap className="w-8 h-8 text-background" />
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-black rounded-full flex items-center justify-center shadow-[var(--shadow-card)] animate-bounce [animation-delay:1.5s]">
-                  <BookOpen className="w-8 h-8 text-white" />
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 gradient-accent rounded-full flex items-center justify-center shadow-[var(--shadow-card)] animate-bounce [animation-delay:1.5s]">
+                  <BookOpen className="w-8 h-8 text-foreground" />
                 </div>
               </div>
             </div>
@@ -132,15 +125,15 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="flex justify-center">
             {/* Student Card */}
             <div 
-              className="clean-card clean-card-hover p-8 cursor-pointer group animate-slide-up"
+              className="clean-card clean-card-hover p-8 cursor-pointer group animate-slide-up max-w-md w-full"
               onClick={() => navigate('/login/student')}
             >
               <div className="text-center space-y-6">
-                <div className="w-20 h-20 mx-auto bg-black rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <GraduationCap className="w-10 h-10 text-white" />
+                <div className="w-20 h-20 mx-auto gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <GraduationCap className="w-10 h-10 text-background" />
                 </div>
                 <div className="space-y-3">
                   <h3 className="text-2xl font-bold">I'm a Student</h3>
@@ -149,31 +142,8 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="pt-4">
-                  <div className="inline-flex items-center font-medium group-hover:underline">
+                  <div className="inline-flex items-center font-medium text-primary group-hover:underline">
                     Start Learning <ArrowRight className="ml-2 w-4 h-4" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Teacher Card */}
-            <div 
-              className="clean-card clean-card-hover p-8 cursor-pointer group animate-slide-up [animation-delay:200ms]"
-              onClick={() => navigate('/login/teacher')}
-            >
-              <div className="text-center space-y-6">
-                <div className="w-20 h-20 mx-auto bg-black rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <BookOpen className="w-10 h-10 text-white" />
-                </div>
-                <div className="space-y-3">
-                  <h3 className="text-2xl font-bold">I'm a Teacher</h3>
-                  <p className="text-muted-foreground">
-                    Share your expertise and inspire the next generation of learners
-                  </p>
-                </div>
-                <div className="pt-4">
-                  <div className="inline-flex items-center font-medium group-hover:underline">
-                    Start Teaching <ArrowRight className="ml-2 w-4 h-4" />
                   </div>
                 </div>
               </div>
@@ -200,8 +170,8 @@ const Index = () => {
               const Icon = feature.icon;
               return (
                 <div key={index} className="clean-card p-8 text-center animate-slide-up" style={{animationDelay: `${index * 200}ms`}}>
-                  <div className="w-16 h-16 mx-auto bg-black rounded-2xl flex items-center justify-center mb-6">
-                    <Icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center mb-6">
+                    <Icon className="w-8 h-8 text-background" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                   <p className="text-muted-foreground">{feature.description}</p>

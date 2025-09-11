@@ -6,49 +6,54 @@
 
 @layer base {
   :root {
-    /* Core Colors - Black & White Theme */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 0%;
+    /* Core Colors - Dark Gradient Theme */
+    --background: 220 25% 8%;
+    --foreground: 210 40% 95%;
     
     /* Card System */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
+    --card: 220 25% 12%;
+    --card-foreground: 210 40% 95%;
     
     /* Glass Cards */
-    --glass: 0 0% 100% / 0.1;
-    --glass-border: 0 0% 100% / 0.2;
-    --glass-hover: 0 0% 100% / 0.15;
+    --glass: 210 40% 95% / 0.1;
+    --glass-border: 210 40% 95% / 0.2;
+    --glass-hover: 210 40% 95% / 0.15;
     
-    /* Primary - Clean Black */
-    --primary: 0 0% 0%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Cyan/Teal */
+    --primary: 188 85% 55%;
+    --primary-foreground: 220 25% 8%;
     
-    /* Secondary - Soft Gray */
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 9%;
+    /* Secondary - Blue */
+    --secondary: 215 85% 60%;
+    --secondary-foreground: 210 40% 95%;
     
-    /* Pure Black & White Theme */
-    --accent: 0 0% 0%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Purple */
+    --accent: 260 85% 65%;
+    --accent-foreground: 210 40% 95%;
     
     /* Success */
-    --success: 0 0% 0%;
-    --success-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 95%;
     
     /* Muted */
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 220 25% 15%;
+    --muted-foreground: 210 15% 65%;
     
     /* Border & Input */
-    --border: 0 0% 90%;
-    --input: 0 0% 96%;
-    --input-foreground: 0 0% 9%;
-    --ring: 0 0% 0%;
+    --border: 220 25% 20%;
+    --input: 220 25% 15%;
+    --input-foreground: 210 40% 95%;
+    --ring: 188 85% 55%;
     
-    /* Pure B&W Effects */
-    --shadow-card: 0 4px 24px hsl(0 0% 0% / 0.1);
-    --shadow-hover: 0 8px 32px hsl(0 0% 0% / 0.15);
-    --shadow-strong: 0 12px 40px hsl(0 0% 0% / 0.2);
+    /* Gradient Effects */
+    --shadow-card: 0 4px 24px hsl(220 25% 5% / 0.4);
+    --shadow-hover: 0 8px 32px hsl(220 25% 5% / 0.6);
+    --shadow-strong: 0 12px 40px hsl(220 25% 5% / 0.8);
+    
+    /* Gradient Backgrounds */
+    --gradient-primary: linear-gradient(135deg, hsl(188 85% 55%), hsl(215 85% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(215 85% 60%), hsl(260 85% 65%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 25% 12%));
     
     /* Border Radius */
     --radius: 1rem;
@@ -71,30 +76,30 @@
   }
 
   .dark {
-    /* Dark Mode - Inverted for black theme */
-    --background: 0 0% 0%;
-    --foreground: 0 0% 100%;
+    /* Dark Mode - Enhanced Gradients */
+    --background: 220 25% 5%;
+    --foreground: 210 40% 98%;
     
-    --card: 0 0% 0%;
-    --card-foreground: 0 0% 100%;
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
     
-    --glass: 0 0% 0% / 0.1;
-    --glass-border: 0 0% 0% / 0.2;
-    --glass-hover: 0 0% 0% / 0.15;
+    --glass: 210 40% 98% / 0.08;
+    --glass-border: 210 40% 98% / 0.15;
+    --glass-hover: 210 40% 98% / 0.12;
     
-    --primary: 0 0% 100%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 188 85% 60%;
+    --primary-foreground: 220 25% 5%;
     
-    --secondary: 0 0% 4%;
-    --secondary-foreground: 0 0% 91%;
+    --secondary: 215 85% 65%;
+    --secondary-foreground: 210 40% 98%;
     
-    --muted: 0 0% 4%;
-    --muted-foreground: 0 0% 55%;
+    --muted: 220 25% 10%;
+    --muted-foreground: 210 15% 70%;
     
-    --border: 0 0% 10%;
-    --input: 0 0% 4%;
-    --input-foreground: 0 0% 91%;
-    --ring: 0 0% 100%;
+    --border: 220 25% 15%;
+    --input: 220 25% 10%;
+    --input-foreground: 210 40% 98%;
+    --ring: 188 85% 60%;
     
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -118,22 +123,26 @@
 }
 
 @layer components {
-  /* Clean Card Components */
+  /* Glass Card Components */
   .clean-card {
-    @apply bg-white border border-border shadow-[var(--shadow-card)] rounded-xl;
+    @apply bg-card/80 backdrop-blur-lg border border-glass-border shadow-[var(--shadow-card)] rounded-xl;
   }
   
   .clean-card-hover {
-    @apply transition-all duration-300 hover:shadow-[var(--shadow-hover)] hover:scale-[1.02];
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-hover)] hover:scale-[1.02] hover:bg-glass-hover;
   }
   
-  /* Black & White Styling */
-  .bw-accent {
-    @apply bg-black text-white;
+  /* Gradient Styling */
+  .gradient-primary {
+    background: var(--gradient-primary);
   }
   
-  .bw-outline {
-    @apply border-2 border-black text-black hover:bg-black hover:text-white;
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .gradient-dark {
+    background: var(--gradient-dark);
   }
   
   /* Success Animation */
@@ -144,13 +153,26 @@
   /* OTP Input Focus Effect */
   .otp-input {
     @apply w-12 h-12 text-center text-lg font-semibold border-2 border-border rounded-lg 
-           focus:border-black focus:ring-2 focus:ring-black/20 
-           focus:outline-none transition-all duration-200;
+           focus:border-primary focus:ring-2 focus:ring-primary/20 
+           focus:outline-none transition-all duration-200 bg-input;
   }
   
-  /* Hero Section */
+  /* Hero Section with Gradient */
   .hero-pattern {
-    background-image: radial-gradient(circle at 25% 25%, hsl(0 0% 95%) 0%, transparent 50%),
-                      radial-gradient(circle at 75% 75%, hsl(0 0% 95%) 0%, transparent 50%);
+    background: var(--gradient-dark);
+    position: relative;
+  }
+  
+  .hero-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, hsl(188 85% 55% / 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(260 85% 65% / 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, hsl(215 85% 60% / 0.2) 0%, transparent 50%);
+    pointer-events: none;
   }
 }
