@@ -125,10 +125,10 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="flex justify-center">
+          <div className="grid md:grid-cols-2 gap-8">
             {/* Student Card */}
             <div 
-              className="clean-card clean-card-hover p-8 cursor-pointer group animate-slide-up max-w-md w-full"
+              className="clean-card clean-card-hover p-8 cursor-pointer group animate-slide-up"
               onClick={() => navigate('/login/student')}
             >
               <div className="text-center space-y-6">
@@ -144,6 +144,29 @@ const Index = () => {
                 <div className="pt-4">
                   <div className="inline-flex items-center font-medium text-primary group-hover:underline">
                     Start Learning <ArrowRight className="ml-2 w-4 h-4" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Teacher Card */}
+            <div 
+              className="clean-card clean-card-hover p-8 cursor-pointer group animate-slide-up [animation-delay:200ms]"
+              onClick={() => navigate('/login/teacher')}
+            >
+              <div className="text-center space-y-6">
+                <div className="w-20 h-20 mx-auto gradient-accent rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <BookOpen className="w-10 h-10 text-foreground" />
+                </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-bold">I'm a Teacher</h3>
+                  <p className="text-muted-foreground">
+                    Share your expertise and inspire the next generation of learners
+                  </p>
+                </div>
+                <div className="pt-4">
+                  <div className="inline-flex items-center font-medium text-primary group-hover:underline">
+                    Start Teaching <ArrowRight className="ml-2 w-4 h-4" />
                   </div>
                 </div>
               </div>
