@@ -125,11 +125,11 @@
 @layer components {
   /* Glass Card Components */
   .clean-card {
-    @apply bg-card/80 backdrop-blur-lg border border-glass-border shadow-[var(--shadow-card)] rounded-xl;
+    @apply bg-card/80 backdrop-blur-lg border border-border/30 shadow-[var(--shadow-card)] rounded-xl;
   }
   
   .clean-card-hover {
-    @apply transition-all duration-300 hover:shadow-[var(--shadow-hover)] hover:scale-[1.02] hover:bg-glass-hover;
+    @apply transition-all duration-300 hover:shadow-[var(--shadow-hover)] hover:scale-[1.02] hover:bg-card/90;
   }
   
   /* Gradient Styling */
